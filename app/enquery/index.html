@@ -1,0 +1,102 @@
+﻿<div class="main-inline">
+   
+
+
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+        <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+        <div class="container">
+            <div class="about_trainer">
+
+                <div class="row">
+                    <div class="col-sm-4 text-center">
+                        <h3 class="m_2">Enquery information</h3>
+                       
+
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="fname">Full Name<span class="kv-reqd">*</span></label>
+                                    <input type="text" class="form-control" ng-model="vm.member.fullname" name="fname" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="gender">Gender<span class="kv-reqd">*</span></label>
+                                    <select class="form-control" ng-model="vm.member.gender" id="gender" name="gender" required>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="transgender">Transgender</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+
+                                    <label for="phone">Contact No:<span class="kv-reqd">*</span></label>
+                                    <input type="text" name="phone" ng-model="vm.member.phone" class="form-control" id="phone" value="" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="email">Email<span class="kv-reqd"></span></label>
+                                    <input type="email" name="email" ng-model="vm.member.email" class="form-control" id="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+
+                                    <label for="edate">Date<span class="kv-reqd">*</span></label>
+                                    <input type="text" name="edate" ng-model="vm.member.edate" class="form-control datepicker" id="edate" value="" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="occupation">Occupation<span class="kv-reqd"></span></label>
+                                    <input type="text" name="occupation" ng-model="vm.member.occupation" class="form-control" id="occupation" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <hr>
+                            <div class="text-right">
+                                <button type="submit" ng-disabled="userForm.$invalid" class="btn btn-primary" ng-click="vm.saveEnquery()">Save</button>
+                                <!--<button type="button" class="btn btn-danger" ng-click="vm.clearMember()">Clear</button>-->
+                                <button type="button" class="btn btn-danger" ng-click="vm.goBack()">Go Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+
+
+            </div>
+        </div>
+    </form>
+</div>
+<link rel="stylesheet" href="/css/jqueryui.css">
+
+<script src="/js/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#edate").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-100:+0"
+        });
+
+
+        
+    });
+</script>
+
+
+
+

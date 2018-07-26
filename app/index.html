@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gym Trainer</title>
+    <link rel="shortcut icon" type="image/png" href="/images/quotation.png" />
+   
+    <link href="/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>-->
+    <!--<link href="/css/css.css" rel="stylesheet" type='text/css' />
+    <link href="/css/css1.css" rel="stylesheet" type='text/css' />-->
+    <script src="/js/jquery.min.js"></script>
+</head>
+<body>
+    <!-- header -->
+
+    <div class="menu">
+        <div class="container">
+            
+            <div class="logo">
+               
+               <a style="padding: 0px 0px 0px 20px;" href="index.html"><img class="imglogo" src="/images/IMG-LOGO.jpg" alt=""/></a><br/>
+			   <label style="width:auto;color:#FFF;">The Champion Gym </label>
+            </div>
+            <div class="h_menu4">
+                <!-- start h_menu4 -->
+                <a class="toggleMenu" href="#">Menu</a>
+                <!--<ul class="nav">
+                    <li ng-class="{active: activeTab === 'home'}"><a ui-sref="home">Home</a></li>
+                    <li ng-class="{active: activeTab === 'account'}"><a ui-sref="account">Account</a></li>
+                    <li ng-class="{active: activeTab === 'plans'}"><a href="classes.html">Plans</a></li>
+                    <li ng-class="{active: activeTab === 'member'}"><a ui-sref="member">Members</a></li>
+
+                    <li><a href="contact.html">Welcome {{user.firstName}} !</a></li>
+                </ul>-->
+
+                <ul class="nav">
+                    <li ng-class="{active: activeTab === 'home'}"><a ui-sref="home">Home</a></li>
+                    <!--<li ng-class="{active: activeTab === 'account'}"><a ui-sref="account">Account</a></li>-->
+                    <li ng-class="{active: activeTab === 'member'}">
+                        <a href="javascript:;">Members</a>
+                        <ul>
+                            <li><a ui-sref="member">Add Member</a></li>
+                            <li><a ui-sref="allmember">Member List</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li ng-class="{active: activeTab === 'enquery'}">
+                        <a href="javascript:;">Enquery</a>
+                        <ul>
+                            <li><a ui-sref="enquery">Add Enquery</a></li>
+                            <li><a ui-sref="allenquery">Enquery List</a></li>
+
+                        </ul>
+                    </li>
+					 <li ng-class="{active: activeTab === 'export'}">
+                        <a ui-sref="export">Export Tool</a>
+                       
+                    </li>
+                    <!--<li ng-class="{active: activeTab === 'collectfee'}"><a ui-sref="collectfee">Collect Fees</a></li>-->
+                    <!--<li class="">
+                        <a href="javascript:;">Newsletter</a>
+                        <ul>
+                            <li><a href="javascript:;">News #1</a></li>
+                            <li><a href="javascript:;">News #2@@@</a></li>
+                            <li><a href="javascript:;">News #3</a></li>
+                        </ul>
+                    </li>-->
+                    <!--<li class=""><a href="javascript:;">Contact</a></li>-->
+                    <li class=""><a href="/login">Logout</a></li>
+                   
+                </ul>
+
+
+
+            </div><!-- end h_menu4 -->
+            <div class="clear"></div>
+
+        </div>
+    </div>
+    <div class="flash-message" ng-if="flash">
+        <div class="{{'alert alert-' + flash.type}}" ng-click="flash=null" ng-bind="flash.message"></div>
+    </div>
+
+
+    <!-- main -->
+    <main ui-view></main>
+
+    <!-- footer -->
+    <footer></footer>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <!-- external scripts -->
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1200);
+            });
+        });
+    </script>
+    <!-- grid-slider -->
+    <script type="text/javascript" src="/js/nav.js"></script>
+    <script type="text/javascript" src="/js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="/js/jquery.contentcarousel.js"></script>
+    <script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="/js/angular.min.js"></script>
+    <script type="text/javascript" src="/js/angular-ui-router.min.js"></script>
+	    <script type="text/javascript" src="/js/angular-sanitize.min.js"></script>
+ <script type="text/javascript" src="/ng-csv/build/ng-csv.js"></script>
+ 
+    <!-- application scripts -->
+    <script src="app.js"></script>
+    <script src="app-services/user.service.js"></script>
+    <script src="app-services/member.service.js"></script>
+    <script src="app-services/flash.service.js"></script>
+    <script src="directives/filemodel.js"></script>
+    <script src="directives/dirPagination.js"></script>
+    <script src="directives/datenow.js"></script>
+    <script src="home/index.controller.js"></script>
+    <script src="account/index.controller.js"></script>
+    <script src="member/index.controller.js"></script>
+    <script src="enquery/index.controller.js"></script>
+</body>
+</html>

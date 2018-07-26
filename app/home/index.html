@@ -1,0 +1,64 @@
+﻿ <div style="float: right;margin: 2px 0px 0px 0px;" class="row">
+                 <div class="col-sm-3">
+                <div class="form-group">
+					<button type="button" class="btn btn-primary" ng-click="vm.backupdata()">BackUp</button>
+                </div>
+            </div>
+			 </div>
+
+<div class="row content_middle_bottom col-md-12">
+    <div class="col-md-4">
+        <h3 class="m_2">Membership Expired (Total:{{vm.expired.length}})</h3>
+        <div class="events">
+            <div ng-repeat="expired in vm.expired" class="event-top">
+                <ul class="event1">
+                    <img alt="{{expired.firstname}}" src="{{expired.logo}}"  />
+                </ul>
+                <ul class="event1_text">
+                    <h4><a ui-sref="member({regno: expired.regno})">{{expired.regno}}</a></h4>
+                    <span class="m_5">{{expired.enddate}}</span>
+                    <p>{{expired.firstname}} {{expired.lastname}}</p>
+                  
+                </ul>
+                <div class="clear"></div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h3 class="m_2"> Expiring Today(Total:{{vm.expire.length}})</h3>
+        <div class="events">
+            <div ng-repeat="expired in vm.expire" class="event-top">
+                <ul class="event1">
+                    <img alt="{{expired.firstname}}" src="{{expired.logo}}" />
+                </ul>
+                <ul class="event1_text">
+                    <h4><a ui-sref="member({regno: expired.regno})">{{expired.regno}}</a></h4>
+                    <span class="m_5">{{expired.enddate}}</span>
+                    <p>{{expired.firstname}} {{expired.lastname}}</p>
+
+                </ul>
+                <div class="clear"></div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h3 class="m_2"> Expiring Tomorrow(Total:{{vm.expiring.length}})</h3>
+        <div class="events">
+            <div ng-repeat="expired in vm.expiring" class="event-top">
+                <ul class="event1">
+                    <img alt="{{expired.firstname}}" src="{{expired.logo}}" />
+                </ul>
+                <ul class="event1_text">
+                    <h4><a ui-sref="member({regno: expired.regno})">{{expired.regno}}</a></h4>
+                    <span class="m_5">{{expired.enddate}}</span>
+                    <p>{{expired.firstname}} {{expired.lastname}}</p>
+
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

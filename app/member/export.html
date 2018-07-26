@@ -1,0 +1,127 @@
+﻿<div class="main-inline">
+    <!--<div class="alert alert-info">
+        <p>Sort key: {{vm.sortKey}}</p>
+        <p>Reverse: {{vm.reverse}}</p>
+        <p>Search String : {{vm.search}}</p>
+        <p>Item Per Page : {{vm.itemsPerPage}}</p>
+    </div>-->
+    <form name="userForm" class="form-inline">
+
+        <div class="row">
+            <h3 class="m_2">Export Tool</h3>
+           
+			<div class="col-sm-12">
+			<div style="display:none;" class="form-group">
+        <label for="separator">Field separator</label>
+        <input type="text" id="separator" class="form-control" ng-model="vm.separator" ng-init="vm.separator=','">
+      </div>
+
+      <div style="display:none;" class="form-group">
+        <label for="decimal-separator">Decimal separator</label>
+        <input type="text" id="decimal-separator" class="form-control" ng-model="vm.decimalSeparator" ng-init="vm.decimalSeparator='.'">
+      </div> 
+                <div class="form-group">
+				
+				   <select class="form-control" id="filterby" ng-model="vm.filterby" name="filterby">
+                        <option value="start">Start Date Between</option>
+                        <option value="end">End Date Between</option>
+                     
+                    </select>
+				 <input type="text" name="start" style="width:130px;" ng-model="vm.start" class="form-control datepicker" placeholder=" Enter Date" id="start" value="" required />
+				  <input type="text" name="end" style="width:130px;" ng-model="vm.end" class="form-control datepicker" placeholder="Enter Date" id="end" value="" required />
+                   <button type="submit" ng-disabled="userForm.$invalid" class="btn btn-primary" ng-click="vm.getMember()">Search</button>
+				   <button type="button" class="btn btn-primary" ng-click="vm.allMember()">Reset</button>
+				    <button type="button" class="btn btn-default" ng-csv="vm.users" csv-header="vm.getHeader()" filename="{{vm.filename}}.csv" field-separator="{{vm.separator}}" decimal-separator="{{vm.decimalSeparator}}"
+              >Export to CSV</button>
+				   
+                </div>
+				
+            </div>
+        </div>
+
+    </form>
+    <table id="customers" class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th ng-click="vm.sort('regno')">
+                    Registration No
+                    <span class="glyphicon sort-icon" ng-class="glyphicon-chevron-up"></span>
+                </th>
+               <!--  <th ng-click="vm.sort('firstname')">
+                    First Name
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='firstname'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                </th>
+                <th ng-click="vm.sort('lastname')">
+                    Last Name
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='lastname'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                </th> -->
+				 <th>
+                    Full Name
+                    <span class="glyphicon sort-icon" ng-class="glyphicon-chevron-up"></span>
+                </th>
+                
+                <th>
+                    D.O.B
+                    <span class="glyphicon sort-icon" ng-class="glyphicon-chevron-up"></span>
+                </th>
+                <th>
+                    Start Date
+                    <span class="glyphicon sort-icon" ng-class="glyphicon-chevron-up"></span>
+                </th>
+				<th>
+                    End Date
+                    <span class="glyphicon sort-icon" ng-class="glyphicon-chevron-up"></span>
+                </th>
+				<th>
+                    Package
+                    <span class="glyphicon sort-icon" ng-class="glyphicon-chevron-up"></span>
+                </th>
+                <th>
+                    Amount Status
+                    <span class="glyphicon sort-icon" ng-class="glyphicon-chevron-up"></span>
+                </th>
+				
+                <th>
+                    Balance
+                    <span class="glyphicon sort-icon" ng-class="glyphicon-chevron-up"></span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in vm.users">
+                <td><a ui-sref="member({regno: user.regno})">{{user.regno}}</a></td>
+                <td>{{user.firstname}} {{user.lastname}}</td>
+               
+                <td>{{user.dob}}</td>
+                <td>{{user.startdate}}</td>
+                <td>{{user.enddate}}</td>
+				 <td>{{user.facility}}</td>
+                <td>{{user.amountstatus}}</td>
+				
+                <td>{{user.pendingamount}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+
+</div>
+
+<link rel="stylesheet" href="/css/jqueryui.css">
+<script src="/js/jquery-ui.js"></script>
+<script>
+    $(function () {
+       
+
+        $("#start, #end").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: 'c-01:c+02'
+        });
+    });
+</script>
+
+
+
+
+

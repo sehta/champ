@@ -1,0 +1,7 @@
+﻿{
+   
+
+	"connectionString":"mongodb://champion:champion1@ds253871.mlab.com:53871/champion",
+	"apiUrl": "http://championgym.herokuapp.com/api",
+    "secret": "REPLACE THIS WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
+}

@@ -1,0 +1,88 @@
+﻿<div class="main-inline">
+    <!--<div class="alert alert-info">
+        <p>Sort key: {{vm.sortKey}}</p>
+        <p>Reverse: {{vm.reverse}}</p>
+        <p>Search String : {{vm.search}}</p>
+        <p>Item Per Page : {{vm.itemsPerPage}}</p>
+    </div>-->
+    <form class="form-inline">
+
+        <div class="row">
+            <h3 class="m_2">Enquery List</h3>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label>Search</label>
+                    <input type="text" ng-model="vm.search" class="form-control" placeholder="Search">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+
+                    <label for="subscription">Items Per Page<span class="kv-reqd">*</span></label>
+                    <select class="form-control" id="itemperpage" ng-model="vm.itemsPerPage" name="itemperpage">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <table id="customers" class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th ng-click="vm.sort('fullname')">
+                    FullName
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='fullname'" ng-class="{'glyphicon-chevron-up':vm.reverse,'glyphicon-chevron-down':!vm.reverse}"></span>
+                </th>
+                <th ng-click="vm.sort('gender')">
+                    Gender
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='gender'" ng-class="{'glyphicon-chevron-up':vm.reverse,'glyphicon-chevron-down':!vm.reverse}"></span>
+                </th>
+                <th ng-click="vm.sort('phone')">
+                    Phone
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='phone'" ng-class="{'glyphicon-chevron-up':vm.reverse,'glyphicon-chevron-down':!vm.reverse}"></span>
+                </th>
+                <th ng-click="vm.sort('email')">
+                    Email
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='email'" ng-class="{'glyphicon-chevron-up':vm.reverse,'glyphicon-chevron-down':!vm.reverse}"></span>
+                </th>
+                <th ng-click="vm.sort('edate')">
+                    Enquery Date
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='edate'" ng-class="{'glyphicon-chevron-up':vm.reverse,'glyphicon-chevron-down':!vm.reverse}"></span>
+                </th>
+                <th ng-click="vm.sort('occupation')">
+                    Occupation
+                    <span class="glyphicon sort-icon" ng-show="vm.sortKey=='occupation'" ng-class="{'glyphicon-chevron-up':vm.reverse,'glyphicon-chevron-down':!vm.reverse}"></span>
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr dir-paginate="user in vm.users|orderBy:vm.sortKey:vm.reverse|filter:vm.search|itemsPerPage:vm.itemsPerPage">
+                <td>{{user.fullname}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.edate}}</td>
+               
+                <td>{{user.occupation}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+    <dir-pagination-controls max-size="5"
+                             direction-links="true"
+                             boundary-links="true">
+    </dir-pagination-controls>
+
+
+</div>
+
+
+
+
+

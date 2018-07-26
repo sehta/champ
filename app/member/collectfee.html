@@ -1,0 +1,249 @@
+﻿<div class="main-inline">
+   
+
+
+    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+        <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+        <div class="container">
+            <div class="about_trainer">
+
+                <div class="row">
+                    <div class="col-sm-4 text-center">
+                        <h3 class="m_2">Member Payments</h3>
+                     
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="fname">Registration Number<span class="kv-reqd"></span></label>
+                                    <input class="form-control" id="regno" name="regno" ng-model="vm.member.regno" type="text" required />
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="lname">&nbsp;<span class="kv-reqd"></span></label><br />
+                                    <button type="submit" ng-disabled="regno.$invalid" class="btn btn-primary">Find</button>
+                                    OR
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="lname">Phone Number<span class="kv-reqd">*</span></label>
+                                    <input type="text" class="form-control" ng-model="vm.member.phone" name="lname" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="lname">&nbsp;<span class="kv-reqd"></span></label><br />
+                                    <button type="submit" ng-disabled="regno.$invalid" class="btn btn-primary">Find</button>
+                                    OR
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="lname">Full Name<span class="kv-reqd"></span></label>
+                                    <input type="text" class="form-control" ng-model="vm.member.firstname" name="lname" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="lname">&nbsp;<span class="kv-reqd"></span></label><br />
+                                    <button type="submit" ng-disabled="regno.$invalid" class="btn btn-primary">Find</button>
+                                    OR
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="gender">Gender<span class="kv-reqd">*</span></label>
+                                    <select class="form-control" ng-model="vm.member.gender" id="gender" name="gender" required>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="transgender">Transgender</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="email">Email<span class="kv-reqd"></span></label>
+                                    <input type="email" name="email" ng-model="vm.member.email" class="form-control" id="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+
+                                    <label for="dob">Date of birth<span class="kv-reqd">*</span></label>
+                                    <input type="text" name="dob" ng-model="vm.member.dob" class="form-control datepicker" id="dob" value="" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="occupation">Occupation<span class="kv-reqd"></span></label>
+                                    <input type="text" name="occupation" ng-model="vm.member.occupation" class="form-control" id="occupation" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+
+                                    <label for="phone">Contact No:<span class="kv-reqd">*</span></label>
+                                    <input type="text" name="phone" ng-model="vm.member.phone" class="form-control" id="phone" value="" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="address">Address<span class="kv-reqd">*</span></label>
+                                    <textarea id="address" name="address" ng-model="vm.member.address" class="form-control" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-sm-4 text-center">
+                                <h3 class="m_2">Gym information</h3>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="subscription">Subscription<span class="kv-reqd">*</span></label>
+                                            <select class="form-control" id="subscription" ng-model="vm.member.subscription" name="subscription" required>
+                                                <option value="Monthly">Monthly</option>
+                                                <option value="Quartly">Quartly</option>
+                                                <option value="HalfYearly">Half-Yearly</option>
+                                                <option value="Yearly">Yearly</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+
+                                            <label for="startdate">Start Date<span class="kv-reqd">*</span></label>
+                                            <input type="text" name="startdate" ng-model="vm.member.startdate" class="form-control datepicker" id="startdate" value="" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+
+                                            <label for="enddate">End Date<span class="kv-reqd"></span></label>
+                                            <input type="text" name="enddate" ng-model="vm.member.enddate" class="form-control datepicker" id="enddate" value="">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+
+                                            <label for="dob">Amount<span class="kv-reqd">*</span></label>
+                                            <input type="text" name="amount" ng-model="vm.member.amount" class="form-control" id="amount" value="" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+
+                                            <label for="dob">Amount Status<span class="kv-reqd">*</span></label>
+                                            <select class="form-control" id="amountstatus" ng-model="vm.member.amountstatus" name="amountstatus" required>
+                                                <option value="paid">Paid</option>
+                                                <option value="balance">Balance</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+
+                                            <label for="dob">Pending Amount<span class="kv-reqd"></span></label>
+                                            <input type="text" name="pendingamount" ng-model="vm.member.pendingamount" class="form-control" id="pendingamount" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+
+                                            <label for="dob">Personal Trainer<span class="kv-reqd"></span></label>
+                                            <select class="form-control" id="trainer" ng-model="vm.member.trainer" name="trainer">
+                                                <option value="">--select--</option>
+                                                <option value="Deepak">Deepak</option>
+                                                <option value="Yash">Yash</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="dob">Plan Type<span class="kv-reqd"></span></label>
+                                        <select class="form-control" ng-change="vm.regupdate()" id="facility" ng-model="vm.member.facility" name="facility">
+
+                                            <option value="Basic Plan">Basic Plan</option>
+                                            <option value="Supreme Plan">Supreme Plan</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <hr>
+                                    <div class="text-right">
+                                        <button type="submit" ng-disabled="userForm.$invalid" class="btn btn-primary" ng-click="vm.saveMember()">Save</button>
+                                        <button class="btn btn-danger" ng-click="vm.clearMember()">Clear</button>
+                                        <button class="btn btn-danger" ng-click="vm.goBack()">Go Back</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+                    </div>
+        </div>
+    </form>
+</div>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="/js/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#dob").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-100:+0"
+        });
+
+
+        $("#startdate, #enddate").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: 'c-01:c+02'
+        });
+    });
+</script>
+
+
+
+
