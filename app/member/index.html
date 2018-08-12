@@ -20,17 +20,16 @@
                                             </div>
                                         </div>-->
 										
-										 <div class='cloudinary_fileupload'> </div>
-
-                                        <div class="image-upload">
+										<div class="image-upload">
                                             <label for="file-input">
                                                 <img ng-src="{{vm.member.logo}}" ng-model="vm.member.logo" title="Change picture" alt="Avatar">
                                             </label>
-
-                                            <input id="file-input" type="file" file-model="vm.myFile" />
+											<div class='cloudinary_fileupload'> </div>
+                                            <!-- <input id="file-input" type="file" file-model="vm.myFile" />-->
                                             <!--<input id="file-input" type="file" />-->
                                            
                                         </div>
+										
                                         <label for="regno">Registration No:<span class="kv-reqd">*</span><input class="form-control" id="regno"name="regno" ng-model="vm.member.regno" type="text" required /></label>
                                         
                                         <div class="clearfix"></div>    <div class="file-preview-status text-center text-success"></div>
