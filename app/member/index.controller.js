@@ -114,7 +114,7 @@
                    
                     vm.allusers=mem;
                     vm.users = mem;  
-					console.log(vm.users);
+					//console.log(vm.users);
 					//ajax request to fetch data into $scope.data
                    // vm.member.regno = vm.member.facility.charAt(0) + "-" + vm.member.subscription + "-Gym-" + parseInt(vm.users.length + 1);
                 });
@@ -181,7 +181,7 @@
             })
             .success(function (msg) {
                 vm.member.logo = "/uploads/" + msg;
-                console.log(msg);
+              //  console.log(msg);
                 console.log("success!!");
             })
             .error(function () {

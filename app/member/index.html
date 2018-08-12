@@ -267,7 +267,7 @@ console.log(scope);
 					 console.log(scope);
                      scope.$apply(function () {
 					 console.log(scope);
-                         scope.updateUserPicture(data.result.secure_url);
+                         scope.vm.updateUserPicture(data.result.secure_url);
                      });
 
                  }).bind('fileuploadprogress', function (e, data) {
