@@ -66,6 +66,9 @@
             vm.reverse = !vm.reverse; //if true make it false and vice versa
         }
 
+		vm.updateUserPicture=function(flogo){
+		 vm.member.logo = flogo;
+		}
 		
         vm.changeDate = function ()
         {

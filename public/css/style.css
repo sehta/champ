@@ -4281,9 +4281,10 @@ span.m_26 {
         margin: 6px auto;
     }
 
-.image-upload > input
-{
-    display: none;
+.image-upload > input {
+    display: inline-block;
+    position: relative;
+    left: 50px;
 }
 
 .image-upload img
