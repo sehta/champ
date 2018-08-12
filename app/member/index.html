@@ -258,15 +258,15 @@
          var element = angular.element($('#user_card'));
          var controller = element.controller();
          var scope = element.scope();
-console.log(scope);
+
          $('.cloudinary_fileupload').append(
              $.cloudinary.unsigned_upload_tag("champion_user",
                  { cloud_name: 'hcqzunaxb' }).bind('cloudinarydone', function (e, data) {
                      //debugger;
                      $('#uploadsts').html('');
-					 console.log(scope);
+					
                      scope.$apply(function () {
-					 console.log(scope);
+					 
                          scope.vm.updateUserPicture(data.result.secure_url);
                      });
 
