@@ -2,12 +2,12 @@
    
 
 
-    <form id="user_card" name="userForm" novalidate>
+    <form  name="userForm" novalidate>
         <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
         <div class="container">
             <div class="about_trainer">
 
-                <div class="row">
+                <div id="user_card" class="row">
                     <div class="col-sm-4 text-center">
                         <h3 class="m_2">Personal information</h3>
                         <div class="kv-avatar">
@@ -258,13 +258,15 @@
          var element = angular.element($('#user_card'));
          var controller = element.controller();
          var scope = element.scope();
-
+console.log(scope);
          $('.cloudinary_fileupload').append(
              $.cloudinary.unsigned_upload_tag("lunchedin_user",
                  { cloud_name: 'hzif3kbk7' }).bind('cloudinarydone', function (e, data) {
                      //debugger;
                      $('#uploadsts').html('');
+					 console.log(scope);
                      scope.$apply(function () {
+					 console.log(scope);
                          scope.updateUserPicture(data.result.secure_url);
                      });
 
