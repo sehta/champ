@@ -19,6 +19,8 @@
                                             <img src="/images/default_avatar_male.jpg" alt="Your Avatar">
                                             </div>
                                         </div>-->
+										
+										 <div class='cloudinary_fileupload'> </div>
 
                                         <div class="image-upload">
                                             <label for="file-input">
@@ -230,6 +232,10 @@
 </div>
 <link rel="stylesheet" href="/css/jqueryui.css">
 <script src="/js/jquery-ui.js"></script>
+<script src="/js/jquery.ui.widget.js"></script>
+    <script src="/js/jquery.iframe-transport.js"></script>
+    <script src="/js/jquery.fileupload.js"></script>
+    <script src="/js/jquery.cloudinary.js"></script>
 <script>
     $(function () {
         $("#dob").datepicker({
@@ -246,7 +252,32 @@
         });
     });
 </script>
+<script type="text/javascript">
 
+     $(document).ready(function () {
+
+         var element = angular.element($('#user_card'));
+         var controller = element.controller();
+         var scope = element.scope();
+
+         $('.cloudinary_fileupload').append(
+             $.cloudinary.unsigned_upload_tag("lunchedin_user",
+                 { cloud_name: 'hzif3kbk7' }).bind('cloudinarydone', function (e, data) {
+                     //debugger;
+                     $('#uploadsts').html('');
+                     scope.$apply(function () {
+                         scope.updateUserPicture(data.result.secure_url);
+                     });
+
+                 }).bind('fileuploadprogress', function (e, data) {
+                     //$('.progress_bar').css('width', Math.round((data.loaded * 100.0) / data.total) + '%');
+                     $('#uploadsts').html("<b>Uploading (" + Math.round((data.loaded * 100.0) / data.total) + '%' + ")...</b>");
+                 })
+
+
+         );
+     });
+</script>
 
 
 
