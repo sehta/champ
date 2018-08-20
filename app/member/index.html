@@ -20,13 +20,15 @@
                                             </div>
                                         </div>-->
 										
-										<div class="cloudinary_fileupload1 image-upload">
+										<!-- <div class="cloudinary_fileupload1 image-upload"> -->
+										<div class="image-upload">
                                             <label for="file-input">
-                                                <img ng-src="{{vm.member.logo}}" ng-model="vm.member.logo" onchange="getalert();" title="Change picture" alt="Avatar">
+                                                <img ng-src="{{vm.member.logo}}" ng-model="vm.member.logo" title="Change picture" alt="Avatar">
                                             </label>
 											<!-- <div class='cloudinary_fileupload'> </div> -->
-                                            <!-- <input id="file-input" type="file" file-model="vm.myFile" />-->
+                                            <!-- -->
                                             <!--<input id="file-input" type="file" />-->
+											<input id="file-input" type="file" onchange="getalert();" file-model="vm.myFile" />
                                            
                                         </div>
 										
